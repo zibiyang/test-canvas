@@ -5,8 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>画板</title>
+    <!-- 引入外部样式 -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    HIIIIIIIIIIIII
+    <!-- 创建了一个div标签叫做canvas -->
+    <div id="canvas"></div>
+
+
+    <script>
+        // 找到鼠标点击的位置
+        canvas.onclick = function (e) {
+            // 鼠标点击位置的坐标
+            console.log(e.clientX)
+            console.log(e.clientY)
+            let div = document.createElement('div')
+            // div的样式绝对定位
+            div.style.position = "absolute"
+            // 定位位置
+            div.style.left = e.clientX + 'px'
+            div.style.top = e.clientY + 'px'
+            // 边框
+            div.style.border = '1px solid black'
+            // 宽高
+            div.style.width = '4px'
+            div.style.height = '4px'
+            // 改鼠标位置正中间
+            div.style.marginTop = '-2px'
+            div.style.marginLeft = '-2px'
+            // 改成圆形实心
+            div.style.borderRadius = '50%'
+            div.style.backgroundColor = 'black'
+            // 把div创建出来
+            canvas.appendChild(div)
+            
+        }
+    </script>
 </body>
 </html>
